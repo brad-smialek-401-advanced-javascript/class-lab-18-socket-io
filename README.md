@@ -1,5 +1,3 @@
-
-
 # LAB - 18
 
 ## Socket-io
@@ -7,17 +5,15 @@
 ### Author: Brad Smialek
 
 ### Links and Resources
-* [submission PR](https://github.com/brad-smialek-401-advanced-javascript/lab-class-17-tcp-server/blob/master/README.md)
-* [travis]([![Build Status](https://www.travis-ci.com/brad-smialek-401-advanced-javascript/lab-class-17-tcp-server.svg?branch=master)](https://www.travis-ci.com/brad-smialek-401-advanced-javascript/lab-class-17-tcp-server))
-
-#### Documentation
-
-* [jsdoc](http://xyz.com) 
+* [submission PR](https://github.com/brad-smialek-401-advanced-javascript/class-lab-18-socket-io)
+* [travis]([![Build Status](https://www.travis-ci.com/brad-smialek-401-advanced-javascript/class-lab-18-socket-io.svg?branch=master)](https://www.travis-ci.com/brad-smialek-401-advanced-javascript/class-lab-18-socket-io))
+ 
 
 ### Modules
 #### `app.js`
 #### `server.js`
 #### `logger.js`
+#### `read-write-upper.js`
 #### `test.txt`
 
 * `alterFile = (file) =>`
@@ -27,7 +23,7 @@
 
 
 ###  Server Setup
-* `PORT` - 3001 server.js
+* `PORT` - 3000 server.js
 
 
 #### Running the app
@@ -35,15 +31,13 @@
   * spins up local server // First
 * `node logger.js` 
   * spins up logger // second
-* `node app.js ./files/test.txt`
+* `node app.js files/test.txt`
   * tells app to run and passes file 
-* `save hello`
-  * tests if server listening for save command
 
-  
+
 #### Tests
 *  npm test in the terminal using jest
 
 
 #### UML
-![uml](./assets/tcp.jpg)
+![uml](./assets/IMG_0333.jpg)

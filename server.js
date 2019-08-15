@@ -1,35 +1,29 @@
 'use strict';
 
 const io = require('socket.io')(3000);
-const socket = io.connect('http://localhost:3000');
 
 io.on('connection', (socket) => {
-  console.log('Connected Yo', socket.id);
+  console.log('Connected ', socket.id);
 
-  socket.on('save', (payload) => {
-    console.log('broadcasting');
-    socket.broadcast.emit('message', payload);
+  // socket.on('speak', (payload) => {
+  //   console.log(payload);
+  //   console.log('.');
+  //   socket.broadcast.emit('message', payload);
+  // });
+
+  socket.on('file-save', (payload) => {
+    console.log(payload);
+    console.log('.');
+    socket.broadcast.emit('file-save', payload);
   });
-  
+
+  socket.on('file-error', (payload) => {
+    console.log(payload);
+    console.log('.');
+    socket.broadcast.emit('file-error', payload);
+  });
+
 });
 
-/**
- *
- *
- * @param {*} buffer
- */
-let dispatchEvent = (buffer) => {
-  let text = buffer.toString().trim();
-  let [event, payload] = text.split(/\s+(.*)/);
 
-  if (allowedEvents.includes(event)){
 
-    let eventPayload = {event, payload};
-    for (let socket in socketPool) {
-      socketPool[socket].write(JSON.stringify(eventPayload));
-    }
-  }
-  else {
-    console.log(`IGNORE ${event}`);
-  }
-};
